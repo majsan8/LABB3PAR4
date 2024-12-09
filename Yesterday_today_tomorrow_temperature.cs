@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace LABB3PAR4
 {
-    internal class Temperature
+    internal class Yesterday_today_tomorrow_temperature
     {
-        private Array({0}, {1});
     }
 }
