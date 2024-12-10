@@ -8,5 +8,6 @@ namespace LABB3PAR4
 {
     internal class Average_temperature
     {
+
     }
 }

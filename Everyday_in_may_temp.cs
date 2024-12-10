@@ -9,35 +9,62 @@ namespace LABB3PAR4
     public class Everyday_in_may_temp
     {
 
-        private int[] DaysInMay;
+        private int[] tempInMay = new int[31];
 
-        public Everyday_in_may_temp(int size)
+        public Everyday_in_may_temp()
         {
-            DaysInMay = new int[size];
             GenerateRandomTemperature();
         }
 
         private void GenerateRandomTemperature()
         {
             Random temp = new Random();
-            for (int i = 0; i < DaysInMay.Length; i++)
+            for (int i = 0; i < tempInMay.Length; i++)
             {
-                DaysInMay[i] = temp.Next(5, 115);
+                tempInMay[i] = temp.Next(1, 16);
             }
 
         }
         public void PrintArray()
         {
             Console.WriteLine("Temperaturerna för maj månad");
-            for (int i = 0; i < DaysInMay.Length; i++)
+            for (int i = 0; i < tempInMay.Length; i++)
             {
-                Console.WriteLine($"{i + 1}/5: {DaysInMay[i]} ºC");
+                Console.WriteLine($"{i + 1}/5: {tempInMay[i]} ºC");
             }
         }
+        
 
-        public int[] GetTemperatures()
+        public void FindLowestTemperature()
         {
-            return DaysInMay;
+            int lowestTemperature = tempInMay[0];
+            int lowestTemperatureDay = 1;
+
+            for (int i = 1; i < tempInMay.Length; i++)
+            {
+                if (tempInMay[i] < lowestTemperature)
+                {
+                    lowestTemperature = tempInMay[i];
+                    lowestTemperatureDay = i + 1;
+                }
+            }
+
+            Console.WriteLine($"Kallaste dagen i maj är {lowestTemperatureDay}/5 och det är {lowestTemperature} ºC.");
+        }
+
+        public void FindHighestTemperature()
+        {
+            int highestTemperature = tempInMay[0];
+                int highestTemperatureDay = 1;
+
+            for (int i = 1;i < tempInMay.Length; i++)
+            {
+                if (tempInMay[i] > highestTemperature){
+                    highestTemperature = tempInMay[i];
+                    highestTemperatureDay = i + 1;
+                }
+            }
+            Console.WriteLine($"Varmaste dagen i maj är {highestTemperatureDay}/5 och det är {highestTemperature} ºC");
         }
     } 
 }

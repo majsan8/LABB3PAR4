@@ -4,10 +4,12 @@
     {
         static void Main(string[] args)
         {
+
+            Everyday_in_may_temp myArray = new Everyday_in_may_temp();
             Console.WriteLine("*****************************************************************");
             Console.WriteLine("\nHej och välkommen till temperaturberäknaren för meterologer");
             Console.WriteLine("\n*****************************************************************");
-
+            int userChoice;
             while (true)
             {
                 Console.WriteLine("\nVälj ett alternativ du vill se information om, svara med siffra:\n" +
@@ -22,7 +24,7 @@
                 "\n 9. Temperaturen igår, idag och imorgon" +
                 "\n 10. Alternativ för att ta reda på hur många dagar det varit över en viss temperatur" +
                 "\n 11. Avsluta programmet\n");
-                int userChoice = int.Parse(Console.ReadLine());
+                userChoice = int.Parse(Console.ReadLine());
 
                 if (userChoice == 11)
                 {
@@ -39,21 +41,23 @@
                     {
                         case 1:
                             {
-                                Everyday_in_may_temp myArray = new Everyday_in_may_temp(31);
-
-                                
                                 myArray.PrintArray();
                                 break;
                             }
                         case 2: 
                             {
-                                Everyday_in_may_temp myArray = new Everyday_in_may_temp(31);
-
-                                Lowest_temperature finder = new Lowest_temperature(myArray.GetTemperatures());
-                                finder.FindAndPrintLowestTemperature();
+                             
+                                myArray.FindLowestTemperature();
                                 break; 
                             }
-                        case 3: { break; }
+                        case 3: 
+                            {
+                              
+                                myArray.FindHighestTemperature();
+
+
+                                break; 
+                            }
                         case 4: { break; }
                         case 5: { break; }
                         case 6: { break; }
