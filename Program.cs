@@ -41,11 +41,18 @@
                             {
                                 Everyday_in_may_temp myArray = new Everyday_in_may_temp(31);
 
-                                // Skriv ut arrayen
+                                
                                 myArray.PrintArray();
                                 break;
                             }
-                        case 2: { break; }
+                        case 2: 
+                            {
+                                Everyday_in_may_temp myArray = new Everyday_in_may_temp(31);
+
+                                Lowest_temperature finder = new Lowest_temperature(myArray.GetTemperatures());
+                                finder.FindAndPrintLowestTemperature();
+                                break; 
+                            }
                         case 3: { break; }
                         case 4: { break; }
                         case 5: { break; }

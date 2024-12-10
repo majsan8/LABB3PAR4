@@ -22,7 +22,7 @@ namespace LABB3PAR4
             Random temp = new Random();
             for (int i = 0; i < DaysInMay.Length; i++)
             {
-                DaysInMay[i] = temp.Next(5, 15);
+                DaysInMay[i] = temp.Next(5, 115);
             }
 
         }
@@ -33,6 +33,11 @@ namespace LABB3PAR4
             {
                 Console.WriteLine($"{i + 1}/5: {DaysInMay[i]} ºC");
             }
+        }
+
+        public int[] GetTemperatures()
+        {
+            return DaysInMay;
         }
     } 
 }
