@@ -67,7 +67,7 @@
                         case 10: { break; }
 
                         default:
-                            Console.WriteLine("Du har valt ett alternativ som inte finns, välj alternativ 1-9");
+                            Console.WriteLine("Du har valt" + " " + userChoice + "," + " " + "det är ett alternativ som inte finns, välj alternativ 1-11");
                             break;
 
                     }
