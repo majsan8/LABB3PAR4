@@ -74,7 +74,11 @@
                                 myArray.LowerToHigher();
                                 break;
                             }
-                        case 7: { break; }
+                        case 7: 
+                            {
+                                myArray.HigherToLower();    
+                                break;
+                            }
                         case 8: { break; }
                         case 9: { break; }
                         case 10: { break; }
