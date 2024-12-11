@@ -37,6 +37,7 @@ namespace LABB3PAR4
             for (int i = 0; i < tempInMay.Length; i++)
             {
                 Console.WriteLine($"{i + 1}/5: {tempInMay[i]} ºC");
+
             }
         }
         
@@ -106,8 +107,34 @@ namespace LABB3PAR4
 
         }
 
+        public void LowerToHigher()
+        {
 
-    } 
+
+
+            
+            (int temp, int day)[] tempAndDay = new (int, int)[tempInMay.Length];
+
+            // Fyll arrayen med temperaturer och datum
+            for (int i = 0; i < tempInMay.Length; i++)
+            {
+                tempAndDay[i] = (tempInMay[i], i + 1);
+            }
+
+            // Sortera arrayen baserat på temperatur
+            Array.Sort(tempAndDay, (a, b) => a.temp - b.temp);
+
+            // Skriv ut temperaturerna med tillhörande datum
+            foreach ((int temp, int day) in tempAndDay)
+            {
+                Console.WriteLine($"{day}/5: {temp} ºC");
+            }
+            
+             Array.Copy(originalTempInMay, tempInMay, tempInMay.Length);
+        }
+
+
+    }
 }
 
 

@@ -69,7 +69,11 @@
                                 myArray.FindMedianTemperature();
                                 break;
                             }
-                        case 6: { break; }
+                        case 6:
+                            {
+                                myArray.LowerToHigher();
+                                break;
+                            }
                         case 7: { break; }
                         case 8: { break; }
                         case 9: { break; }
