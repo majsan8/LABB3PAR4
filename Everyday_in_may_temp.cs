@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,10 +12,14 @@ namespace LABB3PAR4
     {
 
         private int[] tempInMay = new int[31];
+        private int[] originalTempInMay; // Lagrar den ursprungliga arrayen
+
 
         public Everyday_in_may_temp()
         {
             GenerateRandomTemperature();
+            originalTempInMay = new int[tempInMay.Length]; // Kopiera arrayen
+            Array.Copy(tempInMay, originalTempInMay, tempInMay.Length);
         }
 
         private void GenerateRandomTemperature()
@@ -66,6 +72,41 @@ namespace LABB3PAR4
             }
             Console.WriteLine($"Varmaste dagen i maj är {highestTemperatureDay}/5 och det är {highestTemperature} ºC");
         }
+
+        public void averageTemperature()
+        {
+            int sumTemp = 0;
+
+            foreach (int temp in tempInMay)
+            {
+                sumTemp += temp;
+            }
+
+            int averageTemp = (sumTemp / tempInMay.Length);
+
+            Console.WriteLine($"Medeltemperaturen i maj är {averageTemp} ºC");
+        }
+
+        public void FindMedianTemperature()
+        {
+
+
+            
+            Array.Sort(tempInMay);
+
+            int middleIndex = tempInMay.Length / 2;
+
+            if (tempInMay.Length % 2 != 0)
+            {
+                Console.WriteLine($"Mediantemperaturen i maj är {tempInMay[middleIndex]} ºC");
+            }
+            Array.Copy(originalTempInMay, tempInMay, tempInMay.Length);
+
+
+
+        }
+
+
     } 
 }
 
