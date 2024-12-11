@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LABB3PAR4
@@ -159,6 +162,37 @@ namespace LABB3PAR4
             Array.Copy(originalTempInMay, tempInMay, tempInMay.Length);
         }
 
+        public void MostCommonTemperature()
+        {
+            Dictionary<int, int> tempCount = new Dictionary<int, int>();
+
+            foreach (int temp in tempInMay)
+            {
+
+                if (tempCount.ContainsKey(temp))
+                {
+                    tempCount[temp]++;
+                }
+                else
+                {
+                    tempCount.Add(temp, 1);
+                }
+            }
+
+            int mostCommonTemp = 0;
+            int highestTemp = 0;
+
+            foreach (KeyValuePair<int, int> kvp in tempCount)
+            {
+                if (kvp.Value > highestTemp)
+                {
+                    highestTemp = kvp.Value;
+                    mostCommonTemp = kvp.Key;
+                }
+
+            } 
+            Console.WriteLine($"Den vanligaste temperaturen i maj är {mostCommonTemp}ºC");
+        }
 
     }
 }

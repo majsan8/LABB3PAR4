@@ -79,7 +79,11 @@
                                 myArray.HigherToLower();    
                                 break;
                             }
-                        case 8: { break; }
+                        case 8: 
+                            {
+                                myArray.MostCommonTemperature();
+                                break; 
+                            }
                         case 9: { break; }
                         case 10: { break; }
 
