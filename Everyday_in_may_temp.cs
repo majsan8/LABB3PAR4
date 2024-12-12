@@ -222,6 +222,29 @@ namespace LABB3PAR4
             }
             
         }
+
+        public void tempOverXDegrees()
+        {
+            Console.WriteLine("Vilken temperatur vill du veta vilka dagar det har varit över det?");
+            string targetTemperature = Console.ReadLine();
+            int targetTemp = int.Parse(targetTemperature);
+            int daysAbove = 0;
+            Console.WriteLine($"Dagar med temperatur över {targetTemp} ºC:");
+            for (int i = 0; i < tempInMay.Length; i++)
+            {
+                if (tempInMay[i] > targetTemp)
+                {
+                    daysAbove++;
+                    Console.WriteLine($"{i + 1}/5: {tempInMay[i]} ºC");
+                }
+            }
+            if (daysAbove == 0)
+            {
+
+                Console.WriteLine($"Ingen dag i maj hade en temperatur över {targetTemp} ºC.");
+            }
+
+        }  
     }
 }
 

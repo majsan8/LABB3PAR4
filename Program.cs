@@ -32,10 +32,7 @@
                     Environment.Exit(0);
 
                 }
-                else if (userChoice == 10)
-                {
-                    Console.WriteLine("Vilken temperatur vill du ta reda på vilka dagar som har just den temperaturen eller högre?");
-                }
+              
                 
                 else
                     switch (userChoice)
@@ -90,7 +87,11 @@
                                 myArray.TempYesterdayTodayTomorrow(DateTime.Today);
                                 break; 
                             }
-                        case 10: { break; }
+                        case 10: 
+                            {
+                                myArray.tempOverXDegrees();
+                                break;
+                            }
 
                         default:
                             Console.WriteLine("Du har valt" + " " + userChoice + "," + " " + "det är ett alternativ som inte finns, välj alternativ 1-11");
