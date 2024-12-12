@@ -85,7 +85,11 @@
                                 myArray.MostCommonTemperature();
                                 break; 
                             }
-                        case 9: { break; }
+                        case 9: 
+                            {
+                                myArray.TempYesterdayTodayTomorrow(DateTime.Today);
+                                break; 
+                            }
                         case 10: { break; }
 
                         default:
@@ -94,12 +98,7 @@
 
                     }
 
-                         if (userChoice == 9)
-                         {
-                            userChoice.ToString();
-                             Console.WriteLine("Vilket datum är det idag, skriv in åå/mm/dd?");
-
-                         }
+                
             }
         }
     }

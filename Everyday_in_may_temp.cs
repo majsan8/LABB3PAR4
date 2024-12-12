@@ -192,6 +192,8 @@ namespace LABB3PAR4
         public void TempYesterdayTodayTomorrow(DateTime today)
         {
             (int temp, int day)[] tempAndDay = new (int, int)[tempInMay.Length];
+            Console.WriteLine("\n Vilket datum är det idag, skriv in dagen med siffror, så endast dd? \n");
+
 
             string userInput = Console.ReadLine();
             int day;
@@ -204,15 +206,15 @@ namespace LABB3PAR4
 
                 int selectedIndex = selectedDate.Day - 1;
                 int yesterdayIndex = yesterday.Day - 1;
-                int tomorrowIndex = yesterday.Day - 1;
+                int tomorrowIndex = tomorrow.Day - 1;
 
                 int selectedTemperature = tempInMay[selectedIndex];
                 int yesterdayTemperature = tempInMay[yesterdayIndex];
                 int tomorrowTemperature = tempInMay[tomorrowIndex];
 
-                Console.WriteLine($"Idag är det: {selectedDate.ToString("dd/MM")}: {selectedTemperature}");
-                Console.WriteLine($"Igår var det: ({yesterday.ToString("dd/MM")}): {yesterdayTemperature}");
-                Console.WriteLine($"Imorgon är det: ({tomorrow.ToString("dd/MM")}): {tomorrowTemperature}");
+                Console.WriteLine($"\nIgår: {yesterday.ToString("MM/dd")}: {yesterdayTemperature} ºC");
+                Console.WriteLine($"Idag: {selectedDate.ToString("MM/dd")}: {selectedTemperature} ºC");
+                Console.WriteLine($"Imorgon: {tomorrow.ToString("MM/dd")}: {tomorrowTemperature} ºC");
             }
             else
             {
