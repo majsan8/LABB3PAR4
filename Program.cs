@@ -36,6 +36,7 @@
                 {
                     Console.WriteLine("Vilken temperatur vill du ta reda på vilka dagar som har just den temperaturen eller högre?");
                 }
+                
                 else
                     switch (userChoice)
                     {
@@ -92,6 +93,13 @@
                             break;
 
                     }
+
+                         if (userChoice == 9)
+                         {
+                            userChoice.ToString();
+                             Console.WriteLine("Vilket datum är det idag, skriv in åå/mm/dd?");
+
+                         }
             }
         }
     }

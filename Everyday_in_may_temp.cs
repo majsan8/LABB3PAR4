@@ -114,8 +114,6 @@ namespace LABB3PAR4
         {
 
 
-
-            
             (int temp, int day)[] tempAndDay = new (int, int)[tempInMay.Length];
 
             // Fyll arrayen med temperaturer och datum
@@ -138,9 +136,6 @@ namespace LABB3PAR4
 
         public void HigherToLower()
         {
-
-
-
 
             (int temp, int day)[] tempAndDay = new (int, int)[tempInMay.Length];
 
@@ -194,6 +189,37 @@ namespace LABB3PAR4
             Console.WriteLine($"Den vanligaste temperaturen i maj är {mostCommonTemp}ºC");
         }
 
+        public void TempYesterdayTodayTomorrow(DateTime today)
+        {
+            (int temp, int day)[] tempAndDay = new (int, int)[tempInMay.Length];
+
+            string userInput = Console.ReadLine();
+            int day;
+
+            if (int.TryParse(userInput, out day) && day >= 1 && day <= 31)
+            {
+                DateTime selectedDate = new DateTime(2024, 5, day);
+                DateTime yesterday = selectedDate.AddDays(-1);
+                DateTime tomorrow = selectedDate.AddDays(1);
+
+                int selectedIndex = selectedDate.Day - 1;
+                int yesterdayIndex = yesterday.Day - 1;
+                int tomorrowIndex = yesterday.Day - 1;
+
+                int selectedTemperature = tempInMay[selectedIndex];
+                int yesterdayTemperature = tempInMay[yesterdayIndex];
+                int tomorrowTemperature = tempInMay[tomorrowIndex];
+
+                Console.WriteLine($"Idag är det: {selectedDate.ToString("dd/MM")}: {selectedTemperature}");
+                Console.WriteLine($"Igår var det: ({yesterday.ToString("dd/MM")}): {yesterdayTemperature}");
+                Console.WriteLine($"Imorgon är det: ({tomorrow.ToString("dd/MM")}): {tomorrowTemperature}");
+            }
+            else
+            {
+                Console.WriteLine("Felaktigt datum, välj ett datum mellan 1-31 och skriv det som åååå/m/d");
+            }
+            
+        }
     }
 }
 
