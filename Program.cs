@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
 
-            Everyday_in_may_temp myArray = new Everyday_in_may_temp();
+            TemperatureCalculatorsForMay myArray = new TemperatureCalculatorsForMay();
             Console.WriteLine("*****************************************************************");
             Console.WriteLine("\nHej och välkommen till temperaturberäknaren för meterologer");
             Console.WriteLine("\n*****************************************************************");
@@ -58,7 +58,7 @@
                             }
                         case 4:
                             {
-                                myArray.averageTemperature();
+                                myArray.FindAverageTemperature();
 
                                 break;
                             }
@@ -69,27 +69,27 @@
                             }
                         case 6:
                             {
-                                myArray.LowerToHigher();
+                                myArray.PrintLowerToHigherTemperature();
                                 break;
                             }
                         case 7: 
                             {
-                                myArray.HigherToLower();    
+                                myArray.PrintHigherToLowerTemperature();    
                                 break;
                             }
                         case 8: 
                             {
-                                myArray.MostCommonTemperature();
+                                myArray.FindMostCommonTemperature();
                                 break; 
                             }
                         case 9: 
                             {
-                                myArray.TempYesterdayTodayTomorrow(DateTime.Today);
+                                myArray.PrintTempYesterdayTodayTomorrow(DateTime.Today);
                                 break; 
                             }
                         case 10: 
                             {
-                                myArray.tempOverXDegrees();
+                                myArray.FindTempOverXDegrees();
                                 break;
                             }
 
